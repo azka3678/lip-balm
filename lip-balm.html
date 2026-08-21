@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US26 Lip Balm - Official Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        :root {
+            --maroon-primary: #800020;
+            --maroon-dark: #500014;
+            --accent-gold: #e6c687;
+            --white-pure: #ffffff;
+            --white-soft: #fcf9f9;
+            --text-dark: #2c2224;
+            --text-muted: #66585a;
+            --shadow-soft: 0 10px 30px rgba(128, 0, 32, 0.08);
+        }
+
+        body {
+            background-color: var(--white-soft);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* HEADER LOGO */
+        .header-logo {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--white-pure);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.04);
+        }
+
+        .logo-badge {
+            background: var(--maroon-primary);
+            color: var(--white-pure);
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-weight: 700;
+            color: var(--maroon-dark);
+            font-size: 1.2rem;
+            margin-left: 6px;
+        }
+
+        /* CONTAINER UTAMA */
+        .main-container {
+            max-width: 850px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        /* MENU NAVIGASI TERPUSAT */
+        .menu-navigation {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            background: var(--white-pure);
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(128, 0, 32, 0.1);
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            background: transparent;
+            border: none;
+            padding: 10px 22px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-tab:hover {
+            color: var(--maroon-primary);
+            background-color: rgba(128, 0, 32, 0.05);
+        }
+
+        .nav-tab.active {
+            background-color: var(--maroon-primary);
+            color: var(--white-pure);
+            box-shadow: 0 4px 12px rgba(128, 0, 32, 0.2);
+        }
+
+        /* SISTEM HALAMAN / TAB */
+        .page {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .page.active-page {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HALAMAN 1: BERANDA */
+        .hero-card {
+            background: var(--white-pure);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(128, 0, 32, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .badge-tag {
+            display: inline-block;
+            background-color: rgba(128, 0, 32, 0.08);
+            color: var(--maroon-primary);
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 2.2rem;
+            color: var(--maroon-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .product-card {
+            background: var(--white-soft);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid rgba(128, 0, 32, 0.1);
+            min-width: 240px;
+        }
+
+        /* HALAMAN 2: TENTANG */
+        .box-card {
+            background: var(--white-pure);
+            border-left: 5px solid var(--maroon-primary);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .box-card h2 {
+            color: var(--maroon-dark);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .highlight-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        /* HALAMAN 3: KANDUNGAN */
+        .grid-2 {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .card-item {
+            background: var(--white-pure);
+            border: 1px solid rgba(128, 0, 32, 0.1);
+            padding: 2rem;
+            border-radius: 16px;
+            flex: 1;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .card-item h3 {
+            color: var(--maroon-primary);
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+        }
+
+        /* HALAMAN 4: KREATOR */
+        .school-card {
+            background: var(--white-pure);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow-soft);
+            text-align: center;
+            border: 1px solid rgba(128, 0, 32, 0.1);
+        }
+
+        .product-badge {
+            background: var(--accent-gold);
+            color: #4a3800;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .like-button {
+            background-color: var(--maroon-primary);
+            color: var(--white-pure);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 1.5rem;
+            transition: transform 0.2s;
+        }
+
+        .like-button:hover {
+            transform: scale(1.05);
+            background-color: var(--maroon-dark);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--maroon-dark);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-card, .grid-2 {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOGO UTAMA -->
+    <header class="header-logo">
+        <span class="logo-badge">US26</span>
+        <span class="logo-text">Lip Care</span>
+    </header>
+
+    <!-- KONTEN UTAMA DAN PILIHAN MENU -->
+    <main class="main-container">
+
+        <!-- TOMBOL PILIHAN MENU TERPUSAT -->
+        <nav class="menu-navigation">
+            <button class="nav-tab active" onclick="openPage('home', this)">Beranda</button>
+            <button class="nav-tab" onclick="openPage('about', this)">Tentang</button>
+            <button class="nav-tab" onclick="openPage('ingredients', this)">Kandungan</button>
+            <button class="nav-tab" onclick="openPage('creator', this)">Kreator</button>
+        </nav>
+
+        <!-- HALAMAN 1: BERANDA -->
+        <div id="home" class="page active-page">
+            <div class="hero-card">
+                <div class="hero-content">
+                    <span class="badge-tag">Unisex Lip Balm • Cewek & Cowok</span>
+                    <h1>Rahasia Bibir Lembap & Sehat Sepanjang Hari</h1>
+                    <p style="color: var(--text-muted); font-size: 1rem;">
+                        Apakah kamu pernah mengalami bibir kering saat beraktivitas sehari-hari? Atau merasa lip balm yang kamu gunakan kurang efektif?
+                    </p>
+                </div>
+                <div class="product-card">
+                    <div style="font-size: 3rem;">✨</div>
+                    <h3 style="color: var(--maroon-dark); margin-top: 8px;">US26 Lip Balm</h3>
+                    <p style="color: var(--text-muted); font-size: 0.85rem;">Nourishing & Hydrating</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- HALAMAN 2: TENTANG -->
+        <div id="about" class="page">
+            <div class="box-card">
+                <div style="font-size: 2rem; margin-bottom: 0.5rem;">🌿</div>
+                <h2>Solusi Tepat untuk Bibirmu</h2>
+                <p class="highlight-text">
+                    Nah, <strong style="color: var(--maroon-primary);">US26 Lip Balm</strong> bisa menjadi pilihan yang tepat untukmu! Dengan kandungan <strong style="color: var(--maroon-primary);">Shea Butter</strong> dan <strong style="color: var(--maroon-primary);">Coconut Oil</strong>, lip balm ini membantu melembapkan dan menghaluskan bibir yang kering dan pecah-pecah.
+                </p>
+            </div>
+        </div>
+
+        <!-- HALAMAN 3: KANDUNGAN -->
+        <div id="ingredients" class="page">
+            <div class="grid-2">
+                <div class="card-item">
+                    <div style="font-size: 2.5rem;">🥜</div>
+                    <h3>Shea Butter</h3>
+                    <p style="color: var(--text-muted);">Nutrisi mendalam yang mengunci kelembapan dan memperbaiki tekstur bibir kering secara efektif.</p>
+                </div>
+                <div class="card-item">
+                    <div style="font-size: 2.5rem;">🥥</div>
+                    <h3>Coconut Oil</h3>
+                    <p style="color: var(--text-muted);">Minyak kelapa alami yang menghaluskan, merawat bibir pecah-pecah, serta memberikan efek lembut instan.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- HALAMAN 4: KREATOR -->
+        <div id="creator" class="page">
+            <div class="school-card">
+                <span class="product-badge">Karya Bangsa</span>
+                <h2 style="color: var(--maroon-dark);">Karya Inovatif Siswa</h2>
+                <p style="font-size: 1.1rem; margin-top: 15px;">
+                    Dibuat oleh siswa-siswi <strong style="color: var(--maroon-primary);">Grade 8 Sekolah Islam Al Azhar Cairo Yogyakarta</strong>.
+                </p>
+                <button id="likeBtn" class="like-button">
+                    ❤️ Apresiasi Produk (<span id="likeCount">0</span>)
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 US26 Lip Balm • Grade 8 Sekolah Islam Al Azhar Cairo Yogyakarta</p>
+    </footer>
+
+    <!-- SCRIPT GANTI HALAMAN & LIKE DARI 0 -->
+    <script>
+        function openPage(pageId, btnElement) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active-page'));
+
+            document.getElementById(pageId).classList.add('active-page');
+
+            const buttons = document.querySelectorAll('.nav-tab');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+        }
+
+        // Fitur Tombol Like (Dimulai dari angka 0)
+        let count = 0;
+        let hasLiked = false;
+        const likeBtn = document.getElementById("likeBtn");
+        const likeCount = document.getElementById("likeCount");
+
+        likeBtn.addEventListener("click", () => {
+            if (!hasLiked) {
+                count++;
+                likeCount.textContent = count;
+                likeBtn.style.backgroundColor = "#500014";
+                hasLiked = true;
+            } else {
+                count--;
+                likeCount.textContent = count;
+                likeBtn.style.backgroundColor = "#800020";
+                hasLiked = false;
+            }
+        });
+    </script>
+</body>
+</html>
